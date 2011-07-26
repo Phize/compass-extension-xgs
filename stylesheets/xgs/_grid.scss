@@ -1,10 +1,10 @@
 @import 'compass/utilities/general/float';
 @import 'compass/utilities/general/clearfix';
 
-$xgs-columns      : 12 !default;
-$xgs-column-width : 54px !default;
-$xgs-guitter-width: 30px !default;
-$xgs-fluid        : false !default;
+$xgs-columns     : 12 !default;
+$xgs-column-width: 54px !default;
+$xgs-gutter-width: 30px !default;
+$xgs-fluid       : false !default;
 
 @mixin xgs-grid($fluid: $xgs-fluid) {
     & {
@@ -66,7 +66,7 @@ $xgs-fluid        : false !default;
         @return 100%;
     }
     @else {
-        @return $xgs-column-width * $xgs-columns + $xgs-guitter-width * ($xgs-columns - 1);
+        @return $xgs-column-width * $xgs-columns + $xgs-gutter-width * ($xgs-columns - 1);
     }
 }
 
@@ -86,12 +86,12 @@ $xgs-fluid        : false !default;
         @include xgs-first;
     }
     @else {
-        margin-left: $xgs-guitter-width;
+        margin-left: $xgs-gutter-width;
     }
 }
 
 @function xgs-unit($n) {
-    @return $xgs-column-width * $n + $xgs-guitter-width * ($n - 1);
+    @return $xgs-column-width * $n + $xgs-gutter-width * ($n - 1);
 }
 
 @mixin xgs-column($n, $first: false) {
@@ -104,7 +104,7 @@ $xgs-fluid        : false !default;
 }
 
 @mixin xgs-push-margin($n) {
-    left: $xgs-column-width * $n + $xgs-guitter-width * $n;
+    left: $xgs-column-width * $n + $xgs-gutter-width * $n;
 }
 
 @mixin xgs-push($n) {
@@ -117,7 +117,7 @@ $xgs-fluid        : false !default;
 }
 
 @mixin xgs-pull-margin($n) {
-    left: -$xgs-column-width * $n + -$xgs-guitter-width * $n;
+    left: -$xgs-column-width * $n + -$xgs-gutter-width * $n;
 }
 
 @mixin xgs-pull($n) {
@@ -126,11 +126,11 @@ $xgs-fluid        : false !default;
 }
 
 @mixin xgs-prepend($n) {
-    padding-left: $xgs-column-width * $n + $xgs-guitter-width * $n;
+    padding-left: $xgs-column-width * $n + $xgs-gutter-width * $n;
 }
 
 @mixin xgs-append($n) {
-    padding-right: $xgs-column-width * $n + $xgs-guitter-width * $n;
+    padding-right: $xgs-column-width * $n + $xgs-gutter-width * $n;
 }
 
 @mixin xgs-clear {
