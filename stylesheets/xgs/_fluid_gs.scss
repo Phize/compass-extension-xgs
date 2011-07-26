@@ -1,0 +1,6 @@
+$xgs-columns      : 12;
+$xgs-guitter-width: 2%;
+$xgs-column-width : (100% - $xgs-guitter-width * ($xgs-columns - 1)) / $xgs-columns;
+$xgs-fluid        : true;
+
+@import 'grid';

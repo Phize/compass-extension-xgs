@@ -1,0 +1,59 @@
+$xgs-columns      : 12;
+$xgs-column-width : 54px;
+$xgs-guitter-width: 30px;
+
+@import 'xgs/grid';
+
+.grid {
+    @include xgs.grid;
+}
+
+@media screen and (min-width: 0px) {
+    $xgs-columns      : 8;
+    $xgs-column-width : 27px;
+    $xgs-guitter-width: 12px;
+
+    .grid {
+        width: xgs.grid-width();
+    }
+}
+
+@media screen and (min-width: 768px) {
+    $xgs-columns      : 12;
+    $xgs-column-width : 44px;
+    $xgs-guitter-width: 20px;
+
+    .grid {
+        width: xgs.grid-width();
+    }
+}
+
+@media screen and (min-width: 1002px) {
+    $xgs-columns      : 12;
+    $xgs-column-width : 54px;
+    $xgs-guitter-width: 30px;
+
+    .grid {
+        width: xgs.grid-width();
+    }
+}
+
+@media screen and (min-width: 1248px) {
+    $xgs-columns      : 16;
+    $xgs-column-width : 48px;
+    $xgs-guitter-width: 30px;
+
+    .grid {
+        width: xgs.grid-width();
+    }
+}
+
+@media screen and (min-width: 1408px) {
+    $xgs-columns      : 16;
+    $xgs-column-width : 58px;
+    $xgs-guitter-width: 30px;
+
+    .grid {
+        width: xgs.grid-width();
+    }
+}

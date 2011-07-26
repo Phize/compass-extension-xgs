@@ -1,0 +1,138 @@
+@import 'compass/utilities/general/float';
+@import 'compass/utilities/general/clearfix';
+
+$xgs-columns      : 12 !default;
+$xgs-column-width : 54px !default;
+$xgs-guitter-width: 30px !default;
+$xgs-fluid        : false !default;
+
+@mixin xgs-grid($fluid: $xgs-fluid) {
+    & {
+        @include xgs-frame($fluid);
+        & .column {
+            @include xgs-column-base;
+        }
+        @for $n from 1 to $xgs-columns {
+            & .unit-#{$n} {
+                width: xgs-unit($n);
+            }
+            & .column-#{$n} {
+                @extend .column;
+                @extend .unit-#{$n};
+            }
+        }
+        & .unit-#{$xgs-columns} {
+            width: xgs-unit($xgs-columns);
+        }
+        & .column-#{$xgs-columns} {
+            @extend .column;
+            @extend .unit-#{$xgs-columns};
+            @extend .first;
+        }
+        & .first {
+            @include xgs-first;
+        }
+        & #{enumerate('.push', 1, $xgs-columns - 1)} {
+            @include xgs-push-base;
+        }
+        & #{enumerate('.pull', 1, $xgs-columns - 1)} {
+            @include xgs-pull-base;
+        }
+        @for $n from 1 to $xgs-columns {
+            & .prepend-#{$n} {
+                @include xgs-prepend($n);
+            }
+        }
+        @for $n from 1 to $xgs-columns {
+            & .append-#{$n} {
+                @include xgs-append($n);
+            }
+        }
+        @for $n from 1 to $xgs-columns {
+            & .push-#{$n} {
+                @include xgs-push-margin($n);
+            }
+        }
+        @for $n from 1 to $xgs-columns {
+            & .pull-#{$n} {
+                @include xgs-pull-margin($n);
+            }
+        }
+    }
+}
+
+@function xgs-frame-width($fluid: $xgs-fluid) {
+    @if $fluid {
+        @return 100%;
+    }
+    @else {
+        @return $xgs-column-width * $xgs-columns + $xgs-guitter-width * ($xgs-columns - 1);
+    }
+}
+
+@mixin xgs-frame($fluid: $xgs-fluid) {
+    width: xgs-frame-width($fluid);
+    margin: auto;
+}
+
+@mixin xgs-first {
+    margin-left: 0;
+}
+
+@mixin xgs-column-base($first: false) {
+    position: relative;
+    @include float-left;
+    @if $first {
+        @include xgs-first;
+    }
+    @else {
+        margin-left: $xgs-guitter-width;
+    }
+}
+
+@function xgs-unit($n) {
+    @return $xgs-column-width * $n + $xgs-guitter-width * ($n - 1);
+}
+
+@mixin xgs-column($n, $first: false) {
+    @include xgs-column-base($first);
+    width: xgs-unit($n);
+}
+
+@mixin xgs-push-base {
+    position: relative;
+}
+
+@mixin xgs-push-margin($n) {
+    left: $xgs-column-width * $n + $xgs-guitter-width * $n;
+}
+
+@mixin xgs-push($n) {
+    @include xgs-push-base;
+    @include xgs-push-margin($n);
+}
+
+@mixin xgs-pull-base {
+    position: relative;
+}
+
+@mixin xgs-pull-margin($n) {
+    left: -$xgs-column-width * $n + -$xgs-guitter-width * $n;
+}
+
+@mixin xgs-pull($n) {
+    @include xgs-pull-base;
+    @include xgs-pull-margin($n);
+}
+
+@mixin xgs-prepend($n) {
+    padding-left: $xgs-column-width * $n + $xgs-guitter-width * $n;
+}
+
+@mixin xgs-append($n) {
+    padding-right: $xgs-column-width * $n + $xgs-guitter-width * $n;
+}
+
+@mixin xgs-clear {
+    @include clearfix;
+}

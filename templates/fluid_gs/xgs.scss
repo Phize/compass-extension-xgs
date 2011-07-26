@@ -1,0 +1,5 @@
+@import 'xgs/fluid_gs';
+
+.grid {
+    @include xgs-grid;
+}
