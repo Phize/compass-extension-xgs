@@ -1,11 +1,20 @@
+// X Grid System
+
 @import 'compass/utilities/general/float';
 @import 'compass/utilities/general/clearfix';
 
+// The number of columns.
 $xgs-columns     : 12 !default;
+// The width of a column.
 $xgs-column-width: 54px !default;
+// The amount of margin between columns.
 $xgs-gutter-width: 30px !default;
+// Whether to use the fluid grid system.
 $xgs-fluid       : false !default;
 
+// Mixin: Generates non-semantic classes for the grid system.
+//
+// @param Boolean $xgs-fluid Whether to use the fluid grid system.
 @mixin xgs-grid($fluid: $xgs-fluid) {
     & {
         @include xgs-frame($fluid);
@@ -64,6 +73,9 @@ $xgs-fluid       : false !default;
     }
 }
 
+// Function: Returns the width of the container.
+//
+// @param Boolean $xgs-fluid Whether to use the fluid grid system.
 @function xgs-frame-width($fluid: $xgs-fluid) {
     @if $fluid {
         @return 100%;
@@ -73,19 +85,25 @@ $xgs-fluid       : false !default;
     }
 }
 
+// Mixin: The declarations for the container.
 @mixin xgs-frame($fluid: $xgs-fluid) {
     width: xgs-frame-width($fluid);
     margin: auto;
 }
 
+// Mixin: The declarations for the first column in a row.
 @mixin xgs-first {
     margin-left: 0;
 }
 
+// Mixin: The declarations for the last column in a row.
 @mixin xgs-last {
     @include clearfix;
 }
 
+// Mixin: The base declarations for columns.
+//
+// @param Boolean $first Whether the column is the first column in a row.
 @mixin xgs-column-base($first: false) {
     position: relative;
     @include float-left;
@@ -97,45 +115,71 @@ $xgs-fluid       : false !default;
     }
 }
 
+// Function: Returns the width of 'n' columns.
+//
+// @param Number $n The number of columns.
 @function xgs-unit($n) {
     @return $xgs-column-width * $n + $xgs-gutter-width * ($n - 1);
 }
 
+// Mixin: The declarations for a column.
+//
+// @param Boolean $first Whether the column is the first column in a row.
 @mixin xgs-column($n, $first: false) {
     @include xgs-column-base($first);
     width: xgs-unit($n);
 }
 
+// Mixin: The base declarations to push an element to the right.
 @mixin xgs-push-base {
     position: relative;
 }
 
+// Mixin: The amount of the margin to push an element to the right.
+//
+// @param Number $n The number of columns.
 @mixin xgs-push-margin($n) {
     left: $xgs-column-width * $n + $xgs-gutter-width * $n;
 }
 
+// Mixin: Moves an element to the 'n' columns right.
+//
+// @param Number $n The number of columns.
 @mixin xgs-push($n) {
     @include xgs-push-base;
     @include xgs-push-margin($n);
 }
 
+// Mixin: The base declarations to pull an element to the left.
 @mixin xgs-pull-base {
     position: relative;
 }
 
+// Mixin: The amount of the margin to push an element to the left.
+//
+// @param Number $n The number of columns.
 @mixin xgs-pull-margin($n) {
     left: -$xgs-column-width * $n + -$xgs-gutter-width * $n;
 }
 
+// Mixin: Moves an element to the 'n' columns left.
+//
+// @param Number $n The number of columns.
 @mixin xgs-pull($n) {
     @include xgs-pull-base;
     @include xgs-pull-margin($n);
 }
 
+// Mixin: Prepends 'n' empty columns to the left.
+//
+// @param Number $n The number of columns.
 @mixin xgs-prepend($n) {
     padding-left: $xgs-column-width * $n + $xgs-gutter-width * $n;
 }
 
+// Mixin: Prepends 'n' empty columns to the right.
+//
+// @param Number $n The number of columns.
 @mixin xgs-append($n) {
     padding-right: $xgs-column-width * $n + $xgs-gutter-width * $n;
 }

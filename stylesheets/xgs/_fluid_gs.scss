@@ -1,3 +1,5 @@
+// Fluid Grid System
+
 $xgs-columns     : 12;
 $xgs-gutter-width: 2%;
 $xgs-column-width: (100% - $xgs-gutter-width * ($xgs-columns - 1)) / $xgs-columns;
