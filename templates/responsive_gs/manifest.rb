@@ -1,3 +1,3 @@
 stylesheet 'xgs.scss', :media => 'screen'
 
-description 'The Respond Grid System.'
+description 'The Responsive Grid System.'
