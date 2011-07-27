@@ -41,9 +41,6 @@ $xgs-fluid       : false !default;
         & .first {
             @include xgs-first;
         }
-        & .last {
-            @include xgs-last;
-        }
         & #{enumerate('.push', 1, $xgs-columns - 1)} {
             @include xgs-push-base;
         }
@@ -97,11 +94,6 @@ $xgs-fluid       : false !default;
 // Mixin: The declarations for the first column in a row.
 @mixin xgs-first {
     margin-left: 0;
-}
-
-// Mixin: The declarations for the last column in a row.
-@mixin xgs-last {
-    @include clearfix;
 }
 
 // Mixin: The base declarations for columns.
