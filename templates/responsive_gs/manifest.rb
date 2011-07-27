@@ -1,3 +1,3 @@
 description 'The Responsive Grid System.'
 
-stylesheet 'xgs.scss', :media => 'screen'
+stylesheet 'scss/xgs.scss', :media => 'screen'
