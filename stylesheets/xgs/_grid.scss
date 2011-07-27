@@ -32,6 +32,9 @@ $xgs-fluid       : false !default;
         & .first {
             @include xgs-first;
         }
+        & .last {
+            @include xgs-last;
+        }
         & #{enumerate('.push', 1, $xgs-columns - 1)} {
             @include xgs-push-base;
         }
@@ -77,6 +80,10 @@ $xgs-fluid       : false !default;
 
 @mixin xgs-first {
     margin-left: 0;
+}
+
+@mixin xgs-last {
+    @include clearfix;
 }
 
 @mixin xgs-column-base($first: false) {
@@ -131,8 +138,4 @@ $xgs-fluid       : false !default;
 
 @mixin xgs-append($n) {
     padding-right: $xgs-column-width * $n + $xgs-gutter-width * $n;
-}
-
-@mixin xgs-clear {
-    @include clearfix;
 }
