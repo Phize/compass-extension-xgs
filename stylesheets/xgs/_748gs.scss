@@ -1,7 +1,7 @@
 // 748 Grid System for Tablet (Portrait)
 
+@import 'grid';
+
 $xgs-columns     : 12;
 $xgs-column-width: 44px;
 $xgs-gutter-width: 20px;
-
-@import 'grid';

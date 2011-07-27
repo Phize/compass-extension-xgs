@@ -1,8 +1,8 @@
+@import 'xgs/grid';
+
 $xgs-columns     : 12;
 $xgs-column-width: 54px;
 $xgs-gutter-width: 30px;
-
-@import 'xgs/grid';
 
 .grid {
     width: xgs-container-width();

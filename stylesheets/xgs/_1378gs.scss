@@ -1,7 +1,7 @@
 // 1378 Grid System for Desktop (1440 x 900)
 
+@import 'grid';
+
 $xgs-columns     : 16;
 $xgs-column-width: 58px;
 $xgs-gutter-width: 30px;
-
-@import 'grid';
