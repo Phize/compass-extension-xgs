@@ -89,6 +89,7 @@ $xgs-fluid       : false !default;
 @mixin xgs-frame($fluid: $xgs-fluid) {
     width: xgs-frame-width($fluid);
     margin: auto;
+    @include clearfix;
 }
 
 // Mixin: The declarations for the first column in a row.
