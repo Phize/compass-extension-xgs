@@ -86,6 +86,8 @@ $xgs-fluid       : false !default;
 }
 
 // Mixin: The declarations for the container.
+//
+// @param Boolean $xgs-fluid Whether to use the fluid grid system.
 @mixin xgs-frame($fluid: $xgs-fluid) {
     width: xgs-frame-width($fluid);
     margin: auto;
