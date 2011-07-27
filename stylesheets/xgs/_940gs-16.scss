@@ -1,0 +1,9 @@
+// 940 Grid System (16 columns)
+// also known as 960 Grid System,
+// (except for its margins on both sides of container.)
+
+@import 'grid';
+
+$xgs-columns     : 16;
+$xgs-column-width: 40px;
+$xgs-gutter-width: 20px;
