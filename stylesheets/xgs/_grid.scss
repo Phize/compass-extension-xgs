@@ -17,7 +17,11 @@ $xgs-fluid       : false !default;
 // @param Boolean $xgs-fluid Whether to use the fluid grid system.
 @mixin xgs-grid($fluid: $xgs-fluid) {
     & {
-        @include xgs-container($fluid);
+        width: xgs-container-width($fluid);
+        margin: auto;
+        &, .row {
+            @include xgs-row;
+        }
         & .column {
             @include xgs-column-base;
         }
@@ -88,6 +92,11 @@ $xgs-fluid       : false !default;
 @mixin xgs-container($fluid: $xgs-fluid) {
     width: xgs-container-width($fluid);
     margin: auto;
+    @include xgs-row;
+}
+
+// Mixin: The declarations for element to group columns.
+@mixin xgs-row {
     @include clearfix;
 }
 
