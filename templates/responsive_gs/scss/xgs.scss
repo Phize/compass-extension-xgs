@@ -5,7 +5,7 @@ $xgs-column-width: 54px;
 $xgs-gutter-width: 30px;
 
 .grid {
-    width: xgs-container-width();
+    @include xgs-container;
 }
 
 @media screen and (min-width: 0px) {
@@ -14,7 +14,7 @@ $xgs-gutter-width: 30px;
     $xgs-gutter-width: 12px;
 
     .grid {
-        width: xgs-container-width();
+        @include xgs-container;
     }
 }
 
@@ -24,7 +24,7 @@ $xgs-gutter-width: 30px;
     $xgs-gutter-width: 20px;
 
     .grid {
-        width: xgs-container-width();
+        @include xgs-container;
     }
 }
 
@@ -34,7 +34,7 @@ $xgs-gutter-width: 30px;
     $xgs-gutter-width: 30px;
 
     .grid {
-        width: xgs-container-width();
+        @include xgs-container;
     }
 }
 
@@ -44,7 +44,7 @@ $xgs-gutter-width: 30px;
     $xgs-gutter-width: 30px;
 
     .grid {
-        width: xgs-container-width();
+        @include xgs-container;
     }
 }
 
@@ -54,6 +54,6 @@ $xgs-gutter-width: 30px;
     $xgs-gutter-width: 30px;
 
     .grid {
-        width: xgs-container-width();
+        @include xgs-container;
     }
 }
