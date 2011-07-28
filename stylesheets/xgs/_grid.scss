@@ -103,6 +103,7 @@ $xgs-fluid       : false !default;
 // Mixin: The declarations for the first column in a row.
 @mixin xgs-first {
     margin-left: 0;
+    @include clearfix;
 }
 
 // Mixin: The base declarations for columns.
