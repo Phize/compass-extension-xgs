@@ -1,0 +1,11 @@
+@import 'xgs/grid';
+
+$xgs-columns     : 12;
+$xgs-column-width: 54px;
+$xgs-gutter-width: 30px;
+$xgs-fluid       : false;
+
+.grid {
+    @include xgs-grid;
+    background: white image-url('test/xgs-grid.png', false, false);
+}

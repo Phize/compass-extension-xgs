@@ -1,0 +1,6 @@
+@import 'xgs/940gs-12';
+
+.grid {
+    @include xgs-grid;
+    background: white image-url('test/940gs-12-grid.png', false, false);
+}

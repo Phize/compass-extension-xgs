@@ -1,0 +1,55 @@
+@import 'compass/reset/utilities';
+@import 'compass/utilities/general/clearfix';
+
+@include global-reset;
+
+$text              : #fff;
+$background        : #3b403b;
+$heading-text      : #3b403b;
+$heading-background: #bcbf5a;
+$heading-border    : #a8aa50;
+$column-text       : #7c8e76;
+$column-background : #f6e67c;
+$column-border     : #dccd6e;
+$grid-background   : #fff;
+
+body {
+    margin: 1.5em 0;
+    color: $text;
+    background: $background;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: .5em 0;
+    border-top: 2px solid $heading-border;
+    border-bottom: 2px solid $heading-border;
+    color: $heading-text;
+    background: $heading-background;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 150%;
+}
+
+p {
+    padding: 10px 0;
+    border: 1px solid $column-border;
+    color: $column-text;
+    background: $column-background;
+    font-size: 70%;
+    text-align: center;
+}
+
+.tests, .test {
+    margin-bottom: 1.5em;
+}
+
+.test {
+    @include clearfix;
+}

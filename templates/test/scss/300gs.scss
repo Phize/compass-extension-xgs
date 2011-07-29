@@ -1,0 +1,6 @@
+@import 'xgs/300gs';
+
+.grid {
+    @include xgs-grid;
+    background: white image-url('test/300gs-grid.png', false, false);
+}
