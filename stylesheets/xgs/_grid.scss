@@ -32,6 +32,9 @@ $xgs-fluid       : false !default;
             & .column-#{$n} {
                 @extend .column;
                 @extend .unit-#{$n};
+                &:first-child {
+                    @include xgs-first;
+                }
             }
         }
         & .unit-#{$xgs-columns} {
