@@ -1,2 +1,3 @@
 require 'compass'
-Compass::Frameworks.register("xgs", :path => "#{File.dirname(__FILE__)}/..")
+extension_path = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+Compass::Frameworks.register('xgs', :path => extension_path)
