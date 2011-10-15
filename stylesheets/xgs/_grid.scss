@@ -19,6 +19,11 @@ $xgs-fluid       : false !default;
     & {
         width: xgs-container-width($fluid);
         margin: auto;
+        // IE6 (Quirks mode) cannot center block-level elements by 'margin: auto;'.
+        // You need add 'text-align: center;' into a rule set for parent element.
+        @if $legacy-support-for-ie6 {
+            text-align: left;
+        }
         &, .row {
             @include xgs-row;
         }
@@ -96,6 +101,11 @@ $xgs-fluid       : false !default;
     width: xgs-container-width($fluid);
     margin: auto;
     @include xgs-row;
+    // IE6 (Quirks mode) cannot center block-level elements by 'margin: auto;'.
+    // You need add 'text-align: center;' into a rule set for parent element.
+    @if $legacy-support-for-ie6 {
+        text-align: left;
+    }
 }
 
 // Mixin: The declarations for element to group columns.
