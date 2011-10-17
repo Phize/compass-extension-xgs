@@ -3,6 +3,8 @@
 @import 'compass/utilities/general/float';
 @import 'compass/utilities/general/clearfix';
 
+// The XGS environment.
+$xgs-environment : compass-env() !default;
 // The number of columns.
 $xgs-columns     : 12 !default;
 // The width of a column.
