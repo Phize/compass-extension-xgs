@@ -6,5 +6,5 @@ end
 end
 
 module Sass::Script::Functions
-    include Xgs::SassExtensions::Functions::CompassEnv unless method_defined? :compass_env
+    include Xgs::SassExtensions::Functions::CompassEnv
 end
