@@ -3,15 +3,15 @@
 @import 'compass/utilities/general/float';
 @import 'compass/utilities/general/clearfix';
 
-// The XGS environment.
+// @var String development|production The XGS environment.
 $xgs-environment : compass-env() !default;
-// The number of columns.
+// @var Number The number of columns.
 $xgs-columns     : 12 !default;
-// The width of a column.
+// @var Number The width of a column.
 $xgs-column-width: 54px !default;
-// The amount of margin between columns.
+// @var Number The amount of margin between columns.
 $xgs-gutter-width: 30px !default;
-// Whether to use the fluid grid system.
+// @var Boolean Whether to use the fluid grid system.
 $xgs-fluid       : false !default;
 
 // Mixin: Generates non-semantic classes for the grid system.
