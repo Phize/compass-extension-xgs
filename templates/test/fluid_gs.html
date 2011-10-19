@@ -14,8 +14,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><%= description %> Tests</title>
         <meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,initial-scale=1.0">
-        <link rel="stylesheet" href="<%= config.http_stylesheets_path %>/test/<%= id %>.css">
         <link rel="stylesheet" href="<%= config.http_stylesheets_path %>/test/test.css">
+        <link rel="stylesheet" href="<%= config.http_stylesheets_path %>/test/<%= id %>.css">
     </head>
     <body>
         <div class="tests">
@@ -27,16 +27,16 @@
                         <h2>Column Test</h2>
                         <div class="row">
                             <div class="column-<%= columns %> first">
-                                <p><%= sprintf '%.3f', column_width * columns + gutter_width * (columns - 1) %><%= unit %></p>
+                                <p class="unit"><%= sprintf '%.3f', column_width * columns + gutter_width * (columns - 1) %><%= unit %></p>
                             </div>
                         </div>
                         <% (1..columns / 2).each do |n| %>
                         <div class="row">
                             <div class="column-<%= n %> first">
-                                <p><%= sprintf '%.3f', column_width * n + gutter_width * (n - 1) %><%= unit %></p>
+                                <p class="unit"><%= sprintf '%.3f', column_width * n + gutter_width * (n - 1) %><%= unit %></p>
                             </div>
                             <div class="column-<%= columns - n %>">
-                                <p><%= sprintf '%.3f', column_width * (columns - n) + gutter_width * ((columns - n) - 1) %><%= unit %></p>
+                                <p class="unit"><%= sprintf '%.3f', column_width * (columns - n) + gutter_width * ((columns - n) - 1) %><%= unit %></p>
                             </div>
                         </div>
                         <% end %>
@@ -49,7 +49,7 @@
                         <% append = " append-#{columns - n}" if (columns - n) > 0; %>
                         <div class="row">
                             <div class="column-1<%= prepend %><%= append %> first">
-                                <p><%= sprintf '%.3f', column_width %><%= unit %></p>
+                                <p class="unit"><%= sprintf '%.3f', column_width %><%= unit %></p>
                             </div>
                         </div>
                         <% end %>
@@ -64,16 +64,16 @@
                         <h2>Column Test</h2>
                         <div class="row">
                             <div class="column-<%= columns %>">
-                                <p><%= sprintf '%.3f', column_width * columns + gutter_width * (columns - 1) %><%= unit %></p>
+                                <p class="unit"><%= sprintf '%.3f', column_width * columns + gutter_width * (columns - 1) %><%= unit %></p>
                             </div>
                         </div>
                         <% (1..columns / 2).each do |n| %>
                         <div class="row">
                             <div class="column-<%= n %>">
-                                <p><%= sprintf '%.3f', column_width * n + gutter_width * (n - 1) %><%= unit %></p>
+                                <p class="unit"><%= sprintf '%.3f', column_width * n + gutter_width * (n - 1) %><%= unit %></p>
                             </div>
                             <div class="column-<%= columns - n %>">
-                                <p><%= sprintf '%.3f', column_width * (columns - n) + gutter_width * ((columns - n) - 1) %><%= unit %></p>
+                                <p class="unit"><%= sprintf '%.3f', column_width * (columns - n) + gutter_width * ((columns - n) - 1) %><%= unit %></p>
                             </div>
                         </div>
                         <% end %>
@@ -86,7 +86,7 @@
                         <% append = " append-#{columns - n}" if (columns - n) > 0; %>
                         <div class="row">
                             <div class="column-1<%= prepend %><%= append %>">
-                                <p><%= sprintf '%.3f', column_width %><%= unit %></p>
+                                <p class="unit"><%= sprintf '%.3f', column_width %><%= unit %></p>
                             </div>
                         </div>
                         <% end %>

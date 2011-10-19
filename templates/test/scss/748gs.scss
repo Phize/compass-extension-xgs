@@ -1,6 +1,19 @@
 @import 'xgs/748gs';
 
+$xgs-show-outline: false;
+$column-text     : #7c8e76;
+
 .grid {
     @include xgs-grid;
     background: white image-url('test/748gs-grid.png', false, false);
+}
+
+.unit {
+    margin-bottom: 1.5em;
+    padding: 10px 0;
+    border: $xgs-outline-width $xgs-outline-style $xgs-outline-color;
+    color: $column-text;
+    background: $xgs-outline-background-color;
+    font-size: 70%;
+    text-align: center;
 }

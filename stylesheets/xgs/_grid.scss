@@ -5,6 +5,22 @@
 
 // @var String development|production The XGS environment.
 $xgs-environment : compass-env() !default;
+
+// @var Boolean Whether to show element's outline.
+$xgs-show-outline: $xgs-environment == development !default;
+// @var Color The width of element's outline.
+$xgs-outline-width              : 1px !default;
+// @var Color The style of element's outline.
+$xgs-outline-style              : solid !default;
+// @var Color The color of element's outline.
+$xgs-outline-color              : #dccd6e !default;
+// @var Number The alpha value of element's outline.
+$xgs-outline-alpha              : 1.0 !default;
+// @var Color The background color of element's outline.
+$xgs-outline-background-color   : #f6e67c !default;
+// @var Number The background alpha of element's outline.
+$xgs-outline-background-alpha   : .25 !default;
+
 // @var Number The number of columns.
 $xgs-columns     : 12 !default;
 // @var Number The width of a column.
@@ -31,6 +47,10 @@ $xgs-fluid       : false !default;
         }
         & .column {
             @include xgs-column-base;
+            &:first-child {
+                @include xgs-first;
+            }
+            @include xgs-element-outline;
         }
         @for $n from 1 to $xgs-columns {
             & .unit-#{$n} {
@@ -39,9 +59,6 @@ $xgs-fluid       : false !default;
             & .column-#{$n} {
                 @extend .column;
                 @extend .unit-#{$n};
-                &:first-child {
-                    @include xgs-first;
-                }
             }
         }
         & .unit-#{$xgs-columns} {
@@ -96,6 +113,20 @@ $xgs-fluid       : false !default;
     }
 }
 
+// Mixin: The declarations to show element's outline.
+@mixin xgs-element-outline {
+    @if $xgs-show-outline {
+        outline: $xgs-outline-width $xgs-outline-style $xgs-outline-color;
+        @if $xgs-outline-alpha < 1.0 {
+            outline: $xgs-outline-width $xgs-outline-style rgba($xgs-outline-color, $xgs-outline-alpha);
+        }
+        background-color: $xgs-outline-background-color;
+        @if $xgs-outline-background-alpha < 1.0 {
+            background-color: rgba($xgs-outline-background-color, $xgs-outline-background-alpha);
+        }
+    }
+}
+
 // Mixin: The declarations for the container.
 //
 // @param Boolean $xgs-fluid Whether to use the fluid grid system.
@@ -118,7 +149,7 @@ $xgs-fluid       : false !default;
 // Mixin: The declarations for the first column in a row.
 @mixin xgs-first {
     margin-left: 0;
-    @include clearfix;
+    clear: both;
 }
 
 // Mixin: The base declarations for columns.
@@ -144,6 +175,7 @@ $xgs-fluid       : false !default;
 
 // Mixin: The declarations for a column.
 //
+// @param Number  $n     The number of columns.
 // @param Boolean $first Whether the column is the first column in a row.
 @mixin xgs-column($n, $first: false) {
     @include xgs-column-base($first);

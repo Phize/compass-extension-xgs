@@ -1,13 +1,25 @@
 @import 'xgs/grid';
 
+$xgs-show-outline: false;
 $xgs-columns     : 12;
 $xgs-column-width: 54px;
 $xgs-gutter-width: 30px;
+$column-text     : #7c8e76;
 
 .grid {
     @include xgs-container;
     height: 1024px;
     background: white image-url('test/978gs-grid.png', false, false);
+}
+
+.unit {
+    margin-bottom: 1.5em;
+    padding: 10px 0;
+    border: $xgs-outline-width $xgs-outline-style $xgs-outline-color;
+    color: $column-text;
+    background: $xgs-outline-background-color;
+    font-size: 70%;
+    text-align: center;
 }
 
 @media screen and (min-width: 0px) {
