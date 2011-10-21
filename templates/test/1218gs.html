@@ -24,7 +24,7 @@
                 <h2>Grid Test (with <%= first_class %> class)</h2>
                 <div class="grid">
                     <div class="test">
-                        <h2>Column Test</h2>
+                        <h3>Column Test</h3>
                         <div class="column-<%= columns %> first">
                             <p class="unit"><%= column_width * columns + gutter_width * (columns - 1) %><%= unit %></p>
                         </div>
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="test">
-                        <h2>Prepend / Append Test</h2>
+                        <h3>Prepend / Append Test</h3>
                         <% (0...columns).each do |n| %>
                         <% prepend = " prepend-#{n}" if n > 0; %>
                         <% append = " append-#{columns - n}" if (columns - n) > 0; %>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="test">
-                        <h2>Push / Pull Test</h2>
+                        <h3>Push / Pull Test</h3>
                         <div class="column-<%= columns / 2 %> push-<%= columns / 2 %> first">
                             <div class="column-1 first">
                                 <p class="unit"><%= column_width %><%= unit %></p>
@@ -87,7 +87,7 @@
                 <h2>Grid Test (with first-child pseudo-class, without <%= first_class %> class)</h2>
                 <div class="grid">
                     <div class="test">
-                        <h2>Column Test</h2>
+                        <h3>Column Test</h3>
                         <div class="row">
                             <div class="column-<%= columns %>">
                                 <p class="unit"><%= column_width * columns + gutter_width * (columns - 1) %><%= unit %></p>
@@ -106,7 +106,7 @@
                     </div>
 
                     <div class="test">
-                        <h2>Prepend / Append Test</h2>
+                        <h3>Prepend / Append Test</h3>
                         <% (0...columns).each do |n| %>
                         <% prepend = " prepend-#{n}" if n > 0; %>
                         <% append = " append-#{columns - n}" if (columns - n) > 0; %>
@@ -119,7 +119,7 @@
                     </div>
 
                     <div class="test">
-                        <h2>Push / Pull Test</h2>
+                        <h3>Push / Pull Test</h3>
                         <div class="row">
                             <div class="column-<%= columns / 2 %> push-<%= columns / 2 %>">
                                 <div class="row">
