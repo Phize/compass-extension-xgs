@@ -1,11 +1,12 @@
-@import 'xgs/978gs';
+$xgs-show-grid      : true;
+$xgs-grid-background: image-url('test/978gs-grid.png', false, false);
+$xgs-show-outline   : false;
+$column-text        : #7c8e76;
 
-$xgs-show-outline: false;
-$column-text     : #7c8e76;
+@import 'xgs/978gs';
 
 .grid {
     @include xgs-grid;
-    background: white image-url('test/978gs-grid.png', false, false);
 }
 
 .unit {

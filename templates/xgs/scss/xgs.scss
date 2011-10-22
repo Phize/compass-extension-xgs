@@ -1,9 +1,43 @@
-@import 'xgs/grid';
+// @var String development|production The XGS environment.
+$xgs-environment             : compass-env();
 
-$xgs-columns     : 12;
-$xgs-column-width: 54px;
-$xgs-gutter-width: 30px;
-$xgs-fluid       : false;
+// @var Boolean Whether to show grid.
+$xgs-show-grid               : $xgs-environment == development;
+// Sync settings with Compass Grid Backgrounds.
+$show-grid-backgrounds       : $xgs-show-grid;
+$show-column-grid-backgrounds: $xgs-show-grid;
+// @var Color The color of grid.
+$xgs-grid-color              : #f6f4da;
+// @var Color The background color of grid.
+$xgs-grid-background-color   : #ffffff;
+// @var String <image>|compass|griddle The method that is used to show grid.
+$xgs-grid-background         : image-url('grid.png', false, false);
+
+// @var Boolean Whether to show element's outline.
+$xgs-show-outline            : $xgs-environment == development;
+// @var Color The width of element's outline.
+$xgs-outline-width           : 1px;
+// @var Color The style of element's outline.
+$xgs-outline-style           : solid;
+// @var Color The color of element's outline.
+$xgs-outline-color           : #dccd6e;
+// @var Number The alpha value of element's outline.
+$xgs-outline-alpha           : 1.0;
+// @var Color The background color of element's outline.
+$xgs-outline-background-color: #f6e67c;
+// @var Number The background alpha of element's outline.
+$xgs-outline-background-alpha: .25;
+
+// @var Number The number of columns.
+$xgs-columns                 : 12;
+// @var Number The width of a column.
+$xgs-column-width            : 54px;
+// @var Number The amount of margin between columns.
+$xgs-gutter-width            : 30px;
+// @var Boolean Whether to use the fluid grid system.
+$xgs-fluid                   : false;
+
+@import 'xgs/grid';
 
 .grid {
     @include xgs-grid;

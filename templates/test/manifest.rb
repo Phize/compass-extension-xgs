@@ -1,6 +1,7 @@
 description 'The X Grid System Test Suite.'
 
 html 'index.html', :to => 'test/index.html', :erb => true
+html 'grid.html', :to => 'test/grid.html', :erb => true
 html 'outline.html', :to => 'test/outline.html', :erb => true
 html 'xgs.html', :to => 'test/xgs.html', :erb => true
 html '300gs.html', :to => 'test/300gs.html', :erb => true
@@ -14,6 +15,7 @@ html 'fluid_gs.html', :to => 'test/fluid_gs.html', :erb => true
 html 'responsive_gs.html', :to => 'test/responsive_gs.html', :erb => true
 
 stylesheet 'scss/test.scss', :media => 'screen', :to => 'test/test.scss'
+stylesheet 'scss/grid.scss', :media => 'screen', :to => 'test/grid.scss'
 stylesheet 'scss/outline.scss', :media => 'screen', :to => 'test/outline.scss'
 stylesheet 'scss/xgs.scss', :media => 'screen', :to => 'test/xgs.scss'
 stylesheet 'scss/300gs.scss', :media => 'screen', :to => 'test/300gs.scss'

@@ -2,9 +2,22 @@
 
 @import 'compass/utilities/general/float';
 @import 'compass/utilities/general/clearfix';
+@import 'compass/layout/grid-background';
 
 // @var String development|production The XGS environment.
-$xgs-environment : compass-env() !default;
+$xgs-environment             : compass-env() !default;
+
+// @var Boolean Whether to show grid.
+$xgs-show-grid               : $xgs-environment == development !default;
+// Sync settings with Compass Grid Backgrounds.
+$show-grid-backgrounds       : $xgs-show-grid !default;
+$show-column-grid-backgrounds: $xgs-show-grid !default;
+// @var Color The color of grid.
+$xgs-grid-color              : #f6f4da !default;
+// @var Color The background color of grid.
+$xgs-grid-background-color   : #ffffff !default;
+// @var String <image>|compass|griddle The method that is used to show grid.
+$xgs-grid-background         : image-url('grid.png', false, false) !default;
 
 // @var Boolean Whether to show element's outline.
 $xgs-show-outline: $xgs-environment == development !default;
@@ -41,6 +54,10 @@ $xgs-fluid       : false !default;
         // You need add 'text-align: center;' into a rule set for parent element.
         @if $legacy-support-for-ie6 {
             text-align: left;
+        }
+        // Show grid for development environment.
+        @if $xgs-environment == development {
+            @include xgs-grid-background;
         }
         &, .row {
             @include xgs-row;
@@ -99,6 +116,9 @@ $xgs-fluid       : false !default;
             }
         }
     }
+    &.show-grid {
+        @include xgs-grid-background;
+    }
 }
 
 // Function: Returns the width of the container.
@@ -127,6 +147,27 @@ $xgs-fluid       : false !default;
     }
 }
 
+// Mixin: The declarations to show grid.
+//
+// @param String $background <image>|compass|griddle The method that is used to show grid.
+@mixin xgs-grid-background($background: $xgs-grid-background, $fluid: $xgs-fluid) {
+    @if $xgs-show-grid {
+        @if $fluid {
+            @if $background == compass {
+                @include column-grid-background($xgs-columns, $xgs-column-width, $xgs-gutter-width, 0, $xgs-grid-color, $xgs-grid-background-color);
+            }
+        } @else {
+            @if $background == compass {
+                @include column-grid-background($xgs-columns, $xgs-column-width, $xgs-gutter-width, 0, $xgs-grid-color, $xgs-grid-background-color);
+            } @else if $background == griddle {
+                background: $xgs-grid-background-color image-url('http://griddle.it/#{int(xgs-container-width($fluid))}-#{$xgs-columns}-#{int($xgs-gutter-width)}?color=#{hex-value($xgs-grid-color)}&num=0', false, false) 0 0 repeat-y;
+            } @else {
+                background: $xgs-grid-background-color $background 0 0 repeat-y;
+            }
+        }
+    }
+}
+
 // Mixin: The declarations for the container.
 //
 // @param Boolean $xgs-fluid Whether to use the fluid grid system.
@@ -138,6 +179,10 @@ $xgs-fluid       : false !default;
     // You need add 'text-align: center;' into a rule set for parent element.
     @if $legacy-support-for-ie6 {
         text-align: left;
+    }
+    // Show grid for development environment.
+    @if $xgs-environment == development {
+        @include xgs-grid-background;
     }
 }
 

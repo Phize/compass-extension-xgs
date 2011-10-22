@@ -1,14 +1,14 @@
-@import 'compass/reset/utilities';
-@import 'compass/utilities/general/clearfix';
-
-@include global-reset;
-
 $text              : #fff;
 $background        : #3b403b;
 $heading-text      : #3b403b;
 $heading-background: #bcbf5a;
 $heading-border    : #a8aa50;
 $grid-background   : #fff;
+
+@import 'compass/reset/utilities';
+@import 'compass/utilities/general/clearfix';
+
+@include global-reset;
 
 body {
     margin: 1.5em 0;

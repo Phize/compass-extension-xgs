@@ -2,7 +2,8 @@
 
 @import 'grid';
 
-$xgs-columns     : 12;
-$xgs-gutter-width: 3%;
-$xgs-column-width: (100% - $xgs-gutter-width * ($xgs-columns - 1)) / $xgs-columns;
-$xgs-fluid       : true;
+$xgs-grid-background: compass;
+$xgs-columns        : 12;
+$xgs-gutter-width   : 3%;
+$xgs-column-width   : (100% - $xgs-gutter-width * ($xgs-columns - 1)) / $xgs-columns;
+$xgs-fluid          : true;

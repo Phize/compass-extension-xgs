@@ -1,78 +1,68 @@
-@import 'xgs/grid';
+$xgs-show-grid      : true;
+$xgs-show-outline   : false;
+$xgs-columns        : 12;
+$xgs-column-width   : 54px;
+$xgs-gutter-width   : 30px;
+$column-text        : #7c8e76;
 
-$xgs-show-outline: false;
-$xgs-columns     : 12;
-$xgs-column-width: 54px;
-$xgs-gutter-width: 30px;
-$column-text     : #7c8e76;
+@import 'xgs/grid';
 
 .grid {
     @include xgs-container;
     height: 1024px;
-    background: white image-url('test/978gs-grid.png', false, false);
-}
-
-.unit {
-    margin-bottom: 1.5em;
-    padding: 10px 0;
-    border: $xgs-outline-width $xgs-outline-style $xgs-outline-color;
-    color: $column-text;
-    background: $xgs-outline-background-color;
-    font-size: 70%;
-    text-align: center;
 }
 
 @media screen and (min-width: 0px) {
-    $xgs-columns     : 8;
-    $xgs-column-width: 27px;
-    $xgs-gutter-width: 12px;
+    $xgs-grid-background: image-url('test/300gs-grid.png', false, false);
+    $xgs-columns        : 8;
+    $xgs-column-width   : 27px;
+    $xgs-gutter-width   : 12px;
 
     .grid {
         @include xgs-container;
-        background: white image-url('test/300gs-grid.png', false, false);
     }
 }
 
 @media screen and (min-width: 768px) {
-    $xgs-columns     : 12;
-    $xgs-column-width: 44px;
-    $xgs-gutter-width: 20px;
+    $xgs-grid-background: image-url('test/748gs-grid.png', false, false);
+    $xgs-columns        : 12;
+    $xgs-column-width   : 44px;
+    $xgs-gutter-width   : 20px;
 
     .grid {
         @include xgs-container;
-        background: white image-url('test/748gs-grid.png', false, false);
     }
 }
 
 @media screen and (min-width: 1002px) {
-    $xgs-columns     : 12;
-    $xgs-column-width: 54px;
-    $xgs-gutter-width: 30px;
+    $xgs-grid-background: image-url('test/978gs-grid.png', false, false);
+    $xgs-columns        : 12;
+    $xgs-column-width   : 54px;
+    $xgs-gutter-width   : 30px;
 
     .grid {
         @include xgs-container;
-        background: white image-url('test/978gs-grid.png', false, false);
     }
 }
 
 @media screen and (min-width: 1248px) {
-    $xgs-columns     : 16;
-    $xgs-column-width: 48px;
-    $xgs-gutter-width: 30px;
+    $xgs-grid-background: image-url('test/1218gs-grid.png', false, false);
+    $xgs-columns        : 16;
+    $xgs-column-width   : 48px;
+    $xgs-gutter-width   : 30px;
 
     .grid {
         @include xgs-container;
-        background: white image-url('test/1218gs-grid.png', false, false);
     }
 }
 
 @media screen and (min-width: 1408px) {
+    $xgs-grid-background: image-url('test/1378gs-grid.png', false, false);
     $xgs-columns     : 16;
     $xgs-column-width: 58px;
     $xgs-gutter-width: 30px;
 
     .grid {
         @include xgs-container;
-        background: white image-url('test/1378gs-grid.png', false, false);
     }
 }

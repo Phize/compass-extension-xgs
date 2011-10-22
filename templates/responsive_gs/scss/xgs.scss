@@ -1,17 +1,18 @@
-@import 'xgs/grid';
-
 $xgs-columns     : 12;
 $xgs-column-width: 54px;
 $xgs-gutter-width: 30px;
+
+@import 'xgs/grid';
 
 .grid {
     @include xgs-container;
 }
 
 @media screen and (min-width: 0px) {
-    $xgs-columns     : 8;
-    $xgs-column-width: 27px;
-    $xgs-gutter-width: 12px;
+    $xgs-grid-background: image-url('300gs-grid.png', false, false);
+    $xgs-columns        : 8;
+    $xgs-column-width   : 27px;
+    $xgs-gutter-width   : 12px;
 
     .grid {
         @include xgs-container;
@@ -19,9 +20,10 @@ $xgs-gutter-width: 30px;
 }
 
 @media screen and (min-width: 768px) {
-    $xgs-columns     : 12;
-    $xgs-column-width: 44px;
-    $xgs-gutter-width: 20px;
+    $xgs-grid-background: image-url('748gs-grid.png', false, false);
+    $xgs-columns        : 12;
+    $xgs-column-width   : 44px;
+    $xgs-gutter-width   : 20px;
 
     .grid {
         @include xgs-container;
@@ -29,9 +31,10 @@ $xgs-gutter-width: 30px;
 }
 
 @media screen and (min-width: 1002px) {
-    $xgs-columns     : 12;
-    $xgs-column-width: 54px;
-    $xgs-gutter-width: 30px;
+    $xgs-grid-background: image-url('978gs-grid.png', false, false);
+    $xgs-columns        : 12;
+    $xgs-column-width   : 54px;
+    $xgs-gutter-width   : 30px;
 
     .grid {
         @include xgs-container;
@@ -39,9 +42,10 @@ $xgs-gutter-width: 30px;
 }
 
 @media screen and (min-width: 1248px) {
-    $xgs-columns     : 16;
-    $xgs-column-width: 48px;
-    $xgs-gutter-width: 30px;
+    $xgs-grid-background: image-url('1218gs-grid.png', false, false);
+    $xgs-columns        : 16;
+    $xgs-column-width   : 48px;
+    $xgs-gutter-width   : 30px;
 
     .grid {
         @include xgs-container;
@@ -49,9 +53,10 @@ $xgs-gutter-width: 30px;
 }
 
 @media screen and (min-width: 1408px) {
-    $xgs-columns     : 16;
-    $xgs-column-width: 58px;
-    $xgs-gutter-width: 30px;
+    $xgs-grid-background: image-url('1378gs-grid.png', false, false);
+    $xgs-columns        : 16;
+    $xgs-column-width   : 58px;
+    $xgs-gutter-width   : 30px;
 
     .grid {
         @include xgs-container;

@@ -1,11 +1,12 @@
-@import 'xgs/fluid_gs';
+$xgs-show-grid      : true;
+$xgs-grid-background: compass;
+$xgs-show-outline   : false;
+$column-text        : #7c8e76;
 
-$xgs-show-outline: false;
-$column-text     : #7c8e76;
+@import 'xgs/fluid_gs';
 
 .grid {
     @include xgs-grid;
-    background: white;
 }
 
 .unit {
